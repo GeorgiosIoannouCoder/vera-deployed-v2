@@ -1,0 +1,12 @@
+# Ignore virtual environment.
+.vera-venv/
+
+# Ignore Python bytecode files.
+__pycache__/
+*.pyc
+
+# Ignore environment variables.
+.env
+
+# Ignore pythonversion.
+.python-version
