@@ -116,6 +116,7 @@ def reshape_dims(features):  # Reshape ndarray dimensions to [4,2376].
 
     # Zero padding is added to the right of the arr.
     arr_padded = np.pad(features, (0, pad_size), "constant")
+
     return arr_padded.reshape(4, 2376)
 
 
