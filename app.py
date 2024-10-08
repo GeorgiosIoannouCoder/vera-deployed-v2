@@ -20,7 +20,7 @@ filterwarnings("ignore")
 app = Flask(__name__)
 
 # Load trained model & scaler.
-model = load_model("model/model.h5")
+# model = load_model("model/model.h5")
 scaler = joblib.load("model/standard_scaler.save")
 
 # Lookup table.
