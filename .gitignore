@@ -12,7 +12,7 @@
 # Model
 model.h5
 
-# Standars scaler
+# Standard scaler
 standard_scaler.save
 
 # Apple Desktop Services Store
