@@ -2,13 +2,22 @@
 import random  # Random variable generators.
 import streamlit as st  # Streamlit.
 
-from audio_processing import load_model_and_scaler, get_features, increase_array_size, predict
+from audio_processing import (
+    load_model_and_scaler,
+    get_features,
+    increase_array_size,
+    predict,
+)
 
 import uuid
 import os
 
 ########################################################################
+st.set_page_config(page_title="VERA", page_icon="🔊")
+
 load_model_and_scaler()
+
+
 ########################################################################
 # Use local CSS.
 def local_css(file_name):
@@ -161,13 +170,13 @@ def save_audio_file(audio_data, filename="audio.wav"):
     try:
         unique_id = str(uuid.uuid4())
         filename = f"audio_{unique_id}.wav"
-        
+
         with open(filename, "wb") as f:
             f.write(audio_data.getvalue())
-        
+
         # Store the filename in session state for later use
         st.session_state["current_audio_file"] = filename
-        
+
         return True
     except Exception as e:
         st.error(f"Error saving audio: {e}")
@@ -228,7 +237,7 @@ def classify_btn():
         if "current_audio_file" not in st.session_state:
             st.write("Please record and save sound first.")
             return
-        
+
         wav_path = st.session_state["current_audio_file"]
         audio_features = get_features(wav_path)
 
